@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나라 맞추기 게임</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- 라이브러리 로드 -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://unpkg.com/topojson-client@3"></script>
+  
+  <!-- 데이터, 맵 로직, 게임 로직 -->
+  <script src="world_data.js"></script>
+  <script src="country_data.js"></script>
+</head>
+<body>
+  
+  <div id="ui-layer">
+    <div id="header-panel">
+      <div id="score-container">
+        <span>점수: <span id="score-display">0</span> / 150</span>
+      </div>
+      <div id="target-container">
+        <h1 id="target-country">나라 로딩 중...</h1>
+      </div>
+      <div id="lives-container">
+        <span id="lives-display">❤️❤️❤️</span>
+      </div>
+    </div>
+    
+    <!-- 게임 오버, 정답 안내 모달 기능 -->
+    <div id="overlay-message" class="hidden">
+      <h2 id="message-text"></h2>
+    </div>
+  </div>
+
+  <div id="map-container"></div>
+  
+  <script src="map.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
